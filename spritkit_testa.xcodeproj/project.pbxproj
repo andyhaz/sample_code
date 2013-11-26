@@ -24,6 +24,8 @@
 		E5E7D42B182CCF5A000AE599 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E7D406182CCF58000AE599 /* UIKit.framework */; };
 		E5E7D433182CCF5A000AE599 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5E7D431182CCF5A000AE599 /* InfoPlist.strings */; };
 		E5E7D435182CCF5A000AE599 /* spritkit_testaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E7D434182CCF5A000AE599 /* spritkit_testaTests.m */; };
+		E5E7D443182CD0DA000AE599 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E7D442182CD0DA000AE599 /* StoreKit.framework */; };
+		E5E7D449182CE0F4000AE599 /* mySprite.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E7D448182CE0F4000AE599 /* mySprite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		E5E7D430182CCF5A000AE599 /* spritkit_testaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spritkit_testaTests-Info.plist"; sourceTree = "<group>"; };
 		E5E7D432182CCF5A000AE599 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E5E7D434182CCF5A000AE599 /* spritkit_testaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spritkit_testaTests.m; sourceTree = "<group>"; };
+		E5E7D442182CD0DA000AE599 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E5E7D447182CE0F4000AE599 /* mySprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mySprite.h; sourceTree = "<group>"; };
+		E5E7D448182CE0F4000AE599 /* mySprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mySprite.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 			files = (
 				E5E7D405182CCF58000AE599 /* CoreGraphics.framework in Frameworks */,
 				E5E7D407182CCF58000AE599 /* UIKit.framework in Frameworks */,
+				E5E7D443182CD0DA000AE599 /* StoreKit.framework in Frameworks */,
 				E5E7D409182CCF58000AE599 /* SpriteKit.framework in Frameworks */,
 				E5E7D403182CCF58000AE599 /* Foundation.framework in Frameworks */,
 			);
@@ -109,6 +115,7 @@
 		E5E7D401182CCF58000AE599 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5E7D442182CD0DA000AE599 /* StoreKit.framework */,
 				E5E7D402182CCF58000AE599 /* Foundation.framework */,
 				E5E7D404182CCF58000AE599 /* CoreGraphics.framework */,
 				E5E7D406182CCF58000AE599 /* UIKit.framework */,
@@ -128,6 +135,8 @@
 				E5E7D41A182CCF59000AE599 /* ViewController.m */,
 				E5E7D41C182CCF59000AE599 /* MyScene.h */,
 				E5E7D41D182CCF59000AE599 /* MyScene.m */,
+				E5E7D447182CE0F4000AE599 /* mySprite.h */,
+				E5E7D448182CE0F4000AE599 /* mySprite.m */,
 				E5E7D41F182CCF59000AE599 /* Spaceship.png */,
 				E5E7D421182CCF59000AE599 /* Images.xcassets */,
 				E5E7D40B182CCF58000AE599 /* Supporting Files */,
@@ -211,6 +220,17 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "andy hazlett";
 				TargetAttributes = {
+					E5E7D3FE182CCF58000AE599 = {
+						DevelopmentTeam = 7QPZTLEJ7L;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
+					};
 					E5E7D426182CCF5A000AE599 = {
 						TestTargetID = E5E7D3FE182CCF58000AE599;
 					};
@@ -265,6 +285,7 @@
 				E5E7D41E182CCF59000AE599 /* MyScene.m in Sources */,
 				E5E7D41B182CCF59000AE599 /* ViewController.m in Sources */,
 				E5E7D415182CCF59000AE599 /* AppDelegate.m in Sources */,
+				E5E7D449182CE0F4000AE599 /* mySprite.m in Sources */,
 				E5E7D411182CCF59000AE599 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,10 +413,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "spritkit_testa/spritkit_testa-Prefix.pch";
 				INFOPLIST_FILE = "spritkit_testa/spritkit_testa-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,10 +430,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "spritkit_testa/spritkit_testa-Prefix.pch";
 				INFOPLIST_FILE = "spritkit_testa/spritkit_testa-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -476,6 +503,7 @@
 				E5E7D43A182CCF5A000AE599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5E7D43B182CCF5A000AE599 /* Build configuration list for PBXNativeTarget "spritkit_testaTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +512,7 @@
 				E5E7D43D182CCF5A000AE599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,18 +1,16 @@
 //
-//  MyScene.h
+//  mySprite.h
 //  spritkit_testa
 //
-
+//  Created by andy hazlett on 11/8/13.
 //  Copyright (c) 2013 andy hazlett. All rights reserved.
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "mySprite.h"
 
-@interface MyScene : SKScene {
-    
-    mySprite *mySprite1,*mySprite2;
-    
+@interface mySprite : SKSpriteNode {
 }
 
+-(void)spaceShip;
+-(void)text;
 @end
