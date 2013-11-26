@@ -15,11 +15,12 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         mySprite1 = [[mySprite alloc]init];
-        mySprite2 = [[mySprite alloc]init];
-        
+        //adds the sprint
         [mySprite1 spaceShip];
-        [mySprite2 text];
+        //add the text
+        [mySprite1 text];
         [self addChild:mySprite1];
+        
         
     }
     return self;
